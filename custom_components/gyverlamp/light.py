@@ -103,6 +103,7 @@ class GyverLamp(Light):
     def update(self):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(5)
             sock.sendto(b'GET', self.address)
             data = sock.recv(1024).decode().split(' ')
             _LOGGER.debug("UPDATE %s", data)
