@@ -1,0 +1,10 @@
+{
+  "domain": "GyverLamp",
+  "name": "GyverLamp",
+  "documentation": "https://github.com/AlexxIT/GyverLamp",
+  "dependencies": [],
+  "codeowners": [
+    "@AlexxIT"
+  ],
+  "requirements": []
+}
