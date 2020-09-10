@@ -3,7 +3,7 @@ import socket
 
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
-from homeassistant.components.light import PLATFORM_SCHEMA, Light, \
+from homeassistant.components.light import PLATFORM_SCHEMA, LightEntity, \
     SUPPORT_BRIGHTNESS, SUPPORT_EFFECT, SUPPORT_COLOR, ATTR_BRIGHTNESS, \
     ATTR_EFFECT, ATTR_HS_COLOR
 from homeassistant.const import CONF_HOST
@@ -26,7 +26,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     add_entities([GyverLamp(host)])
 
 
-class GyverLamp(Light):
+class GyverLamp(LightEntity):
     def __init__(self, host: str, port: int = 8888):
         self.address = (host, port)
 
