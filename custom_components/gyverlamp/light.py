@@ -118,15 +118,16 @@ class GyverLamp(LightEntity):
             self._async_write_ha_state()
 
     def turn_on(self, **kwargs):
-        self.update()
-
         payload = []
         if ATTR_BRIGHTNESS in kwargs:
             payload.append('BRI%d' % kwargs[ATTR_BRIGHTNESS])
 
         if ATTR_EFFECT in kwargs:
             effect = kwargs[ATTR_EFFECT]
-            payload.append('EFF%d' % self._effects.index(effect))
+            try:
+                payload.append('EFF%d' % self._effects.index(effect))
+            except ValueError:
+                payload.append(effect)
 
         if ATTR_HS_COLOR in kwargs:
             scale = round(kwargs[ATTR_HS_COLOR][0] / 360.0 * 100.0)
