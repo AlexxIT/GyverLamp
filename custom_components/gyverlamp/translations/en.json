@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "host": "Host",
+          "effects": "Effects"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "user": {
+        "data": {
+          "host": "Host",
+          "effects": "Effects"
+        }
+      }
+    }
+  }
+}
