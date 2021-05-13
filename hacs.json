@@ -1,4 +1,5 @@
 {
     "name": "GyverLamp",
-    "render_readme": true
+    "render_readme": true,
+    "country": "RU"
 }
