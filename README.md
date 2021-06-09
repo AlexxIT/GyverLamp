@@ -1,4 +1,6 @@
-# Gyver Lamp
+# GyverLamp для Home Assistant
+
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
 Компонент интеграции [Home Assistant][1] с [Огненной Wi-Fi Лампой][2] замечательного российского изобретателя [Александра Майорова][3]. Обязательно **не забывам поддержать** автора этого изобретения.
 
@@ -21,16 +23,23 @@
 
 ## Установка
 
-Копируем папку `gyverlamp` в папку `custom_components` в папку конфигов Home 
-Assistant. Например:
+**Способ 1.** [HACS](https://hacs.xyz/)
 
-`~/.homeassistant/custom_components/gyverlamp/...`
+> HACS > Интеграции > 3 точки (правый верхний угол) > Пользовательские репозитории > URL: `AlexxIT/GyverLamp`, Категория: Интеграция > Добавить > подождать > GyverLamp > Установить
+
+**Способ 2.** Вручную скопируйте папку `gyverlamp` из [latest release](https://github.com/AlexxIT/GyverLamp/releases/latest) в директорию `/config/custom_components`.
 
 ## Настройка
 
 [![Home Assistant компонент для Лампы Гайвера на стандартной прошивке](https://img.youtube.com/vi/riYsv5k_EdY/mqdefault.jpg)](https://www.youtube.com/watch?v=riYsv5k_EdY)
 
-Поддерживается как настройка из GUI, через добавление интеграции. Так и настройка в `configuration.yaml`:
+**Способ 1.** GUI
+
+> Настройки > Интеграции > Добавить интеграцию > **GyverLamp**
+
+Если интеграции нет в списке - очистите кэш браузера.
+
+**Способ 2.** YAML
 
 ```yaml
 light gyverlamp:
