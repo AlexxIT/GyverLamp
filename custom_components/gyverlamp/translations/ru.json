@@ -4,7 +4,10 @@
       "user": {
         "data": {
           "host": "Хост",
-          "effects": "Эффекты"
+          "effects": "Эффекты",
+          "random_effects": "Случайные эффекты",
+          "use_random_effect": "Выбор случайного эффекта при включении",
+          "include_all_effect_to_random": "Включить все эффекты в список случайных эффектов"
         }
       }
     }
@@ -14,7 +17,10 @@
       "user": {
         "data": {
           "host": "Хост",
-          "effects": "Эффекты"
+          "effects": "Эффекты",
+          "random_effects": "Случайные эффекты",
+          "use_random_effect": "Выбор случайного эффекта при включении",
+          "include_all_effect_to_random": "Включить все эффекты в список случайных эффектов"
         }
       }
     }

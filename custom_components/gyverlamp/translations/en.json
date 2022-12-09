@@ -4,7 +4,10 @@
       "user": {
         "data": {
           "host": "Host",
-          "effects": "Effects"
+          "effects": "Effects",
+          "random_effects": "Random effects",
+          "use_random_effect": "Choose random effects when turn lamp on",
+          "include_all_effect_to_random": "Include all effects to random list"
         }
       }
     }
@@ -14,7 +17,10 @@
       "user": {
         "data": {
           "host": "Host",
-          "effects": "Effects"
+          "effects": "Effects",
+          "random_effects": "Random effects",
+          "use_random_effect": "Choose random effects when turn lamp on",
+          "include_all_effect_to_random": "Include all effects to random list"
         }
       }
     }
