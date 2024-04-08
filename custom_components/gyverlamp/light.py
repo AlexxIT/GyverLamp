@@ -63,11 +63,6 @@ async def async_setup_entry(
     hass.data[DOMAIN][entry.entry_id] = entity
 
 
-async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry):
-    hass.data[DOMAIN].pop(entry.entry_id)
-    return True
-
-
 class GyverLamp(LightEntity):
     def __init__(self, config: dict, unique_id=None):
         self._attr_effect_list = config.get(CONF_EFFECTS, EFFECTS)

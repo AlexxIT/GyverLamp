@@ -25,9 +25,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     return True
 
 
-async def async_update_options(hass: HomeAssistant, entry: ConfigEntry):
-    # update entity config
-    hass.data[DOMAIN][entry.entry_id].update_config(entry.options)
+async def async_update_options(hass: HomeAssistant, config_entry: ConfigEntry):
+    await hass.config_entries.async_reload(config_entry.entry_id)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry):
