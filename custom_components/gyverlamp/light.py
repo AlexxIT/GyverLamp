@@ -64,12 +64,14 @@ async def async_setup_entry(
 
 
 class GyverLamp(LightEntity):
+    _attr_color_mode = ColorMode.HS
+    _attr_should_poll = True
+    _attr_supported_color_modes = {ColorMode.HS}
+    _attr_supported_features = LightEntityFeature.EFFECT
+
     def __init__(self, config: dict, unique_id=None):
         self._attr_effect_list = config.get(CONF_EFFECTS, EFFECTS)
         self._attr_name = config.get(CONF_NAME, "Gyver Lamp")
-        self._attr_should_poll = True
-        self._attr_supported_color_modes = {ColorMode.HS}
-        self._attr_supported_features = LightEntityFeature.EFFECT
         self._attr_unique_id = unique_id
 
         self._attr_device_info = DeviceInfo(
