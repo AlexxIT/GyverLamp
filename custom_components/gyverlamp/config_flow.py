@@ -21,7 +21,7 @@ class ConfigFlowHandler(ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             host = user_input[CONF_HOST]
             user_input[CONF_EFFECTS] = parse_effects(user_input[CONF_EFFECTS])
-            return self.async_create_entry(title=host, data=user_input)
+            return self.async_create_entry(title=host, data={}, options=user_input)
 
         effects = ",".join(EFFECTS)
         return self.async_show_form(

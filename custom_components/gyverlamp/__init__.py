@@ -2,6 +2,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 
 DOMAIN = "gyverlamp"
+PLATFORMS = ["light"]
 
 
 async def async_setup(hass, hass_config):
@@ -11,23 +12,17 @@ async def async_setup(hass, hass_config):
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
-    # migrate data (after first setup) to options
-    if entry.data:
-        hass.config_entries.async_update_entry(entry, data={}, options=entry.data)
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
-    # add options handler
-    entry.add_update_listener(async_update_options)
-
-    # forward to light setup
-    coro = hass.config_entries.async_forward_entry_setup(entry, "light")
-    hass.async_create_task(coro)
+    if not entry.update_listeners:
+        entry.add_update_listener(async_update_options)
 
     return True
 
 
-async def async_update_options(hass: HomeAssistant, config_entry: ConfigEntry):
-    await hass.config_entries.async_reload(config_entry.entry_id)
+async def async_update_options(hass: HomeAssistant, entry: ConfigEntry):
+    await hass.config_entries.async_reload(entry.entry_id)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry):
-    return await hass.config_entries.async_forward_entry_unload(entry, "light")
+    return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
